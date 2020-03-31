@@ -12,6 +12,7 @@
 		0801913C2432DD4F00026889 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0801913B2432DD4F00026889 /* Assets.xcassets */; };
 		0801913F2432DD4F00026889 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0801913D2432DD4F00026889 /* Main.storyboard */; };
 		080191422432DD4F00026889 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 080191412432DD4F00026889 /* main.m */; };
+		0879FFEF2432EE1C00E2B739 /* libDHxlsReader.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0879FFEE2432EE1C00E2B739 /* libDHxlsReader.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,9 @@
 		080191402432DD4F00026889 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		080191412432DD4F00026889 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		080191432432DD4F00026889 /* XLSConvertToString.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = XLSConvertToString.entitlements; sourceTree = "<group>"; };
+		0879FFEC2432EE1C00E2B739 /* DHcell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHcell.h; sourceTree = "<group>"; };
+		0879FFED2432EE1C00E2B739 /* DHxlsReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHxlsReader.h; sourceTree = "<group>"; };
+		0879FFEE2432EE1C00E2B739 /* libDHxlsReader.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libDHxlsReader.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0879FFEF2432EE1C00E2B739 /* libDHxlsReader.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,6 +62,7 @@
 		080191342432DD4A00026889 /* XLSConvertToString */ = {
 			isa = PBXGroup;
 			children = (
+				0879FFE82432EE0800E2B739 /* Lib */,
 				080191352432DD4A00026889 /* AppDelegate.h */,
 				080191362432DD4A00026889 /* AppDelegate.m */,
 				080191382432DD4A00026889 /* ViewController.h */,
@@ -68,6 +74,40 @@
 				080191432432DD4F00026889 /* XLSConvertToString.entitlements */,
 			);
 			path = XLSConvertToString;
+			sourceTree = "<group>";
+		};
+		0879FFE82432EE0800E2B739 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				0879FFEE2432EE1C00E2B739 /* libDHxlsReader.a */,
+				0879FFE92432EE1C00E2B739 /* usr */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		0879FFE92432EE1C00E2B739 /* usr */ = {
+			isa = PBXGroup;
+			children = (
+				0879FFEA2432EE1C00E2B739 /* local */,
+			);
+			path = usr;
+			sourceTree = "<group>";
+		};
+		0879FFEA2432EE1C00E2B739 /* local */ = {
+			isa = PBXGroup;
+			children = (
+				0879FFEB2432EE1C00E2B739 /* include */,
+			);
+			path = local;
+			sourceTree = "<group>";
+		};
+		0879FFEB2432EE1C00E2B739 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				0879FFEC2432EE1C00E2B739 /* DHcell.h */,
+				0879FFED2432EE1C00E2B739 /* DHxlsReader.h */,
+			);
+			path = include;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,6 +320,10 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/XLSConvertToString/Lib",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.liuming.XLSConvertToString;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -296,6 +340,10 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/XLSConvertToString/Lib",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.liuming.XLSConvertToString;
 				PRODUCT_NAME = "$(TARGET_NAME)";

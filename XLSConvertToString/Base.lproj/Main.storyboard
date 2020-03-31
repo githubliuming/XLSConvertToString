@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11134" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11134"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15702"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -673,7 +674,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider=""/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -703,11 +704,118 @@
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vz1-Sv-s1J">
+                                <rect key="frame" x="16" y="212" width="119" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="115" id="QeU-wE-3Dq"/>
+                                    <constraint firstAttribute="height" constant="16" id="y3V-cv-2Fr"/>
+                                </constraints>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="excel 路径" id="hdT-5W-xEu">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tq5-32-o9x">
+                                <rect key="frame" x="18" y="151" width="122" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="16" id="jqd-du-lbA"/>
+                                    <constraint firstAttribute="width" constant="118" id="u1T-sr-9od"/>
+                                </constraints>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="string 文件存放路径" id="0vj-vy-miX">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Onr-Bz-6vW">
+                                <rect key="frame" x="146" y="146" width="216" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="216" id="9li-my-Yfu"/>
+                                    <constraint firstAttribute="height" constant="21" id="zwg-7G-oPQ"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="gZ2-8k-CQp">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="piv-MI-wZn">
+                                <rect key="frame" x="370" y="199" width="67" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="GLU-sh-rH5"/>
+                                    <constraint firstAttribute="width" constant="55" id="SnY-22-b3g"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="选择" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="GzX-Py-8ic">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="13" name=".PingFangSC-Regular"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="excelPathSeleted:" target="XfG-lQ-9wD" id="Gw2-6y-0Fm"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8Di-xx-7kH">
+                                <rect key="frame" x="371" y="138" width="67" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="PbD-1t-0Za"/>
+                                    <constraint firstAttribute="width" constant="55" id="SHR-dz-o3h"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="选择" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="6S8-HM-WI6">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="stringFilePathSeleted:" target="XfG-lQ-9wD" id="lim-tY-n7Z"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2ns-gw-u9j">
+                                <rect key="frame" x="52" y="69" width="316" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="开始转换" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="zKE-cj-ADP">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="13" name=".PingFangSC-Regular"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="convertBtnCliked:" target="XfG-lQ-9wD" id="grt-S5-VZA"/>
+                                </connections>
+                            </button>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zKz-BI-Jjw">
+                                <rect key="frame" x="146" y="207" width="216" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="6QT-Pz-0Vp"/>
+                                    <constraint firstAttribute="width" constant="216" id="9e6-R9-NWi"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="462-FX-tw6">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="Onr-Bz-6vW" firstAttribute="leading" secondItem="tq5-32-o9x" secondAttribute="trailing" constant="8" id="6ih-4c-zcM"/>
+                            <constraint firstItem="Onr-Bz-6vW" firstAttribute="top" secondItem="zKz-BI-Jjw" secondAttribute="bottom" constant="40" id="Ibh-uj-kCp"/>
+                            <constraint firstItem="vz1-Sv-s1J" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="18" id="MFl-GI-z4M"/>
+                            <constraint firstItem="piv-MI-wZn" firstAttribute="leading" secondItem="zKz-BI-Jjw" secondAttribute="trailing" constant="14" id="Yd6-2Q-U7u"/>
+                            <constraint firstItem="zKz-BI-Jjw" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="42" id="ZJB-e7-vJP"/>
+                            <constraint firstItem="tq5-32-o9x" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="Zn1-HZ-5GE"/>
+                            <constraint firstItem="8Di-xx-7kH" firstAttribute="leading" secondItem="Onr-Bz-6vW" secondAttribute="trailing" constant="15" id="jDM-5l-lKk"/>
+                            <constraint firstItem="piv-MI-wZn" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="43" id="kHe-LR-FPj"/>
+                            <constraint firstItem="tq5-32-o9x" firstAttribute="top" secondItem="vz1-Sv-s1J" secondAttribute="bottom" constant="45" id="qXh-QO-k8e"/>
+                            <constraint firstItem="8Di-xx-7kH" firstAttribute="top" secondItem="piv-MI-wZn" secondAttribute="bottom" constant="40" id="tCp-DM-7tM"/>
+                            <constraint firstItem="zKz-BI-Jjw" firstAttribute="leading" secondItem="vz1-Sv-s1J" secondAttribute="trailing" constant="13" id="wmF-mw-x7m"/>
+                            <constraint firstItem="vz1-Sv-s1J" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="42" id="x9b-7g-DZ6"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="ecxelPathField" destination="zKz-BI-Jjw" id="Vex-2O-fM6"/>
+                        <outlet property="stringPathField" destination="Onr-Bz-6vW" id="372-fP-ztS"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
