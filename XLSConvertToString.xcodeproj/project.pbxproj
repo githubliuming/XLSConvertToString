@@ -13,6 +13,7 @@
 		0801913F2432DD4F00026889 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0801913D2432DD4F00026889 /* Main.storyboard */; };
 		080191422432DD4F00026889 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 080191412432DD4F00026889 /* main.m */; };
 		0879FFEF2432EE1C00E2B739 /* libDHxlsReader.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0879FFEE2432EE1C00E2B739 /* libDHxlsReader.a */; };
+		0879FFF32432F6A800E2B739 /* libiconv.2.4.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0879FFF22432F6A800E2B739 /* libiconv.2.4.0.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		0879FFEC2432EE1C00E2B739 /* DHcell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHcell.h; sourceTree = "<group>"; };
 		0879FFED2432EE1C00E2B739 /* DHxlsReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHxlsReader.h; sourceTree = "<group>"; };
 		0879FFEE2432EE1C00E2B739 /* libDHxlsReader.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libDHxlsReader.a; sourceTree = "<group>"; };
+		0879FFF22432F6A800E2B739 /* libiconv.2.4.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.2.4.0.tbd; path = usr/lib/libiconv.2.4.0.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0879FFF32432F6A800E2B739 /* libiconv.2.4.0.tbd in Frameworks */,
 				0879FFEF2432EE1C00E2B739 /* libDHxlsReader.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -48,6 +51,7 @@
 			children = (
 				080191342432DD4A00026889 /* XLSConvertToString */,
 				080191332432DD4A00026889 /* Products */,
+				0879FFF12432F6A800E2B739 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -108,6 +112,14 @@
 				0879FFED2432EE1C00E2B739 /* DHxlsReader.h */,
 			);
 			path = include;
+			sourceTree = "<group>";
+		};
+		0879FFF12432F6A800E2B739 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0879FFF22432F6A800E2B739 /* libiconv.2.4.0.tbd */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
