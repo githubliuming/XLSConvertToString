@@ -28,7 +28,7 @@
     [panel setCanChooseFiles:YES];//是否能选择文件file
     [panel setCanChooseDirectories:YES];//是否能打开文件夹
     [panel setAllowsMultipleSelection:NO];//是否允许多选file
-    [panel  setAllowedFileTypes:@[@"xls",@"xlsx"]];
+    [panel  setAllowedFileTypes:@[@"xls"]];
     NSInteger finded = [panel runModal]; //获取panel的响应
     if (finded == NSModalResponseOK) {
        NSArray * urls = [panel URLs];
@@ -92,7 +92,9 @@
             if (cell.str.length > 0)
             {
                 [str appendFormat:@"\n\"%@\" = ",keyCell.str];
-                [str appendFormat:@"\"%@\";",cell.str];
+                NSString * value = cell.str;
+                value = [value stringByReplacingOccurrencesOfString:@"\"" withString:@"\\\""];
+                [str appendFormat:@"\"%@\";",value];
             }
             
         }
