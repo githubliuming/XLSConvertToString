@@ -17,7 +17,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    self.ecxelPathField.enabled = NO;
+    self.stringPathField.enabled = NO;
     // Do any additional setup after loading the view.
 }
 
@@ -53,9 +54,22 @@
     }
 }
 - (IBAction)convertBtnCliked:(NSButton *)sender {
-    
+     if(self.ecxelPathField.stringValue.length <= 0)
+     {
+         [self alert:@"请选择 xls 文件"];
+         return;
+     }
+    if (self.stringPathField.stringValue.length <= 0) {
+        [self alert:@"请选择 导出路径"];
+        return;
+    }
     NSLog(@"excel 路径 = %@",self.ecxelPathField.stringValue);
     DHxlsReader * reader = [DHxlsReader xlsReaderWithPath:self.ecxelPathField.stringValue];
+    if (!reader)
+    {
+        [self alert:@"文件格式不正确!!!"];
+        return ;
+    }
     
     NSInteger sheetCount = [reader numberOfSheets];
     
@@ -110,15 +124,32 @@
             }
             else
             {
+                [self alert:[NSString stringWithFormat:@"写入文件失败:%@ \n error = %@",strPath,error.userInfo]];
                 NSLog(@"写入文件失败");
+                return ;
+                
             }
         }
     }
+    [[NSWorkspace sharedWorkspace] selectFile:nil inFileViewerRootedAtPath:self.stringPathField.stringValue];
 }
 - (void)setRepresentedObject:(id)representedObject {
     [super setRepresentedObject:representedObject];
 
     // Update the view, if already loaded.
+}
+
+- (void)alert:(NSString *)msg{
+    NSAlert *alert = [[NSAlert alloc] init];
+    alert.messageText = @"系统提示:";
+    alert.informativeText = msg;
+    [alert addButtonWithTitle:@"确定"];
+    NSInteger ret = [alert runModal];
+    switch(ret){
+        default:
+            printf("按钮点击了。\n");
+            break;
+    }
 }
 
 
