@@ -93,6 +93,7 @@
             {
                 [str appendFormat:@"\n\"%@\" = ",keyCell.str];
                 NSString * value = cell.str;
+                value = [value stringByReplacingOccurrencesOfString:@"%s" withString:@"%@"];
                 value = [value stringByReplacingOccurrencesOfString:@"\"" withString:@"\\\""];
                 [str appendFormat:@"\"%@\";",value];
             }
